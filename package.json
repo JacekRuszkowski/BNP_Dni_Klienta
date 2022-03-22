@@ -25,5 +25,10 @@
     "gulp-sourcemaps": "^3.0.0",
     "gulp-uglify": "^3.0.2",
     "sass": "^1.48.0"
+  },
+  "dependencies": {
+    "@dogstudio/highway": "^2.2.1",
+    "gsap": "^3.9.1",
+    "swup": "^2.0.14"
   }
 }

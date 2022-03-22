@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dni Klienta - dzien 1 - stream</title>
+    <!-- @include 'links.kit' -->
+</head>
+
+<body>
+    <!-- @include 'nav.kit' -->
+    <main id="swup" class="transition-fade">
+        <div class="header">
+            <img src="/dist/img/header_day1.png" alt="Grafika z zadowolonym klientem">
+        </div>
+        <section class="day-content">
+            <div class="stream">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/-W60BIlLU2c"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </div>
+            <div class="stream-info">
+                <div class="stream-info__text">
+                    <h1 class="text-big-bold">Dzień 1</h1>
+
+                    <p> 11.00 - Otwarcie Dni Klienta
+                        – debata „GŁOS KLIENTA - słuchać
+                        czy usłyszeć”</p>
+
+                </div>
+
+                <div class="stream-info__ask">
+                    <div class="stream-info__head">
+                        <div class="stream-info__icon">
+                        </div>
+                        <p>zadaj pytanie</p>
+                    </div>
+                    <div class="stream-info__question-box">
+                        <textarea cols="30" rows="10" placeholder="Wpisz treść pytania..."></textarea>
+                    </div>
+                    <button class="stream-info__btn">wyslij</button>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- @include 'footer.kit' -->
+
+    <script src="./node_modules/swup/dist/swup.min.js"></script>
+    <script src="./dist/js/main.min.js"></script>
+</body>
