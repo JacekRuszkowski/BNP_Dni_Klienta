@@ -11,69 +11,80 @@
 
 <body>
     <!-- @include 'nav.kit' -->
-    <main id="swup" class="transition-fade">
+    <main>
         <header class="header">
             <img src="/dist/img/header.png" alt="Grafika z zadowolonym klientem">
         </header>
         <section class="section main-info">
-            <p class="text-big-bold">
+            <p class="text-big-bold" data-aos="fade-up" data-aos-duration="800">
                 Tegoroczne Dni Klienta <span class='text-green'>koncentrują się wokół wartości,</span>
                 jakie towarzyszą nam w codziennej pracy z Klientem.
             </p>
-            <p class="text-big-regular">
+            <p class="text-big-regular" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
                 Budujemy nowoczesny bank, gdzie w każdym naszym działaniu czy projekcie widzimy zawsze
                 ludzi – tych którzy zmiany wdrażają i tych dla których je wprowadzamy.
             </p>
-            <p class="text-big-regular">
+            <p class="text-big-regular" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
                 Poznaj <span class='text-big-bold text-green'>TRZY filary idealnej współpracy</span><br>
                 i buduj najlepsze doświadczenia Klienta razem z nami!
             </p>
         </section>
 
         <section class="section info" id="info">
-            <p class="text-big-bold">W tym roku Dni Klienta przeprowadzimy <span class="text-green">w formie
+            <p class="text-big-bold" data-aos="fade-up" data-aos-duration="800">W tym roku Dni Klienta przeprowadzimy
+                <span class="text-green">w formie
                     hybrydowej.</span></p>
             <div class="info__boxes">
 
-                <a href="../day1.html" class="info__box">
-                    <div class=" info__box--day1">
-                        <div class="info__top">
-                            <p class="text-big-bold">Dzień 1</p>
-                            <p class="text-normal">wtorek, 12.10</p>
+                <div data-aos="flip-left" data-aos-delay="100" data-aos-duration="800">
+                    <a href="/day1.html" class="info__box">
+                        <div class=" info__box--day1">
+                            <div class="info__top">
+                                <p class="text-big-bold">Dzień 1</p>
+                                <p class="text-normal">wtorek, 12.10</p>
+                            </div>
+                            <img src="/dist/img/dialog.png" alt="Ikona obrazująca dialog" class="info__icon">
+                            <div class="info__bottom">
+                                <p class="text-big-bold text-green text-upper">słuchamy...</p>
+                                <p class="text-big-regular">i transparentnie mówimy jak jest</p>
+                            </div>
                         </div>
-                        <img src="/dist/img/dialog.png" alt="Ikona obrazująca dialog" class="info__icon">
-                        <div class="info__bottom">
-                            <p class="text-big-bold text-green text-upper">słuchamy...</p>
-                            <p class="text-big-regular">i transparentnie mówimy jak jest</p>
-                        </div>
-                    </div>
-                </a>
-
-                <div class="info__box info__box--day2">
-                    <div class="info__top">
-                        <p class="text-big-bold">Dzień 2</p>
-                        <p class="text-normal">środa, 13.10</p>
-                    </div>
-                    <img src="/dist/img/understand.png" alt="Ikona obrazująca dialog" class="info__icon">
-                    <div class="info__bottom">
-                        <p class="text-big-bold text-green text-upper">rozumiemy...</p>
-                        <p class="text-big-regular">że siła jest w prostocie </p>
-                    </div>
+                    </a>
                 </div>
 
-                <div class="info__box info__box--day3">
-                    <div class="info__top">
-                        <p class="text-big-bold">Dzień 3</p>
-                        <p class="text-normal">czwartek, 14.10</p>
-                    </div>
-                    <img src="/dist/img/action.png" alt="Ikona obrazująca dialog" class="info__icon">
-                    <div class="info__bottom">
-                        <p class="text-big-bold text-green text-upper">działamy...</p>
-                        <p class="text-big-regular">razem, odważnie i z "powerem"</p>
-                    </div>
+                <div data-aos="flip-right" data-aos-delay="300" data-aos-duration="800">
+                    <a href="/day2.html" class="info__box">
+                        <div class="info__box--day2">
+                            <div class="info__top">
+                                <p class="text-big-bold">Dzień 2</p>
+                                <p class="text-normal">środa, 13.10</p>
+                            </div>
+                            <img src="/dist/img/understand.png" alt="Ikona obrazująca dialog" class="info__icon">
+                            <div class="info__bottom">
+                                <p class="text-big-bold text-green text-upper">rozumiemy...</p>
+                                <p class="text-big-regular">że siła jest w prostocie </p>
+                            </div>
+                        </div>
+                    </a>
                 </div>
 
-                <div class="info__box-text text-normal">
+                <div data-aos="flip-right" data-aos-delay="500" data-aos-duration="800">
+                    <a href="/day3.html" class="info__box">
+                        <div class="info__box--day3">
+                            <div class="info__top">
+                                <p class="text-big-bold">Dzień 3</p>
+                                <p class="text-normal">czwartek, 14.10</p>
+                            </div>
+                            <img src="/dist/img/action.png" alt="Ikona obrazująca dialog" class="info__icon">
+                            <div class="info__bottom">
+                                <p class="text-big-bold text-green text-upper">działamy...</p>
+                                <p class="text-big-regular">razem, odważnie i z "powerem"</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="info__box-text text-normal" data-aos="fade-up" data-aos-duration="800">
                     Jeśli chcesz posłuchać na żywo prelekcji pierwszego dnia, to zapraszamy do Audytorium w centrali
                     przy ul. Kasprzaka 2
                     w Warszawie.
@@ -86,7 +97,8 @@
                     i potwierdzisz swoją obecność. Liczba miejsc jest ograniczona
                     Zapraszamy wyłączenie osoby zaszczepione.
                 </div>
-                <div class="info__box-text info__box-text--right text-normal">
+                <div class="info__box-text info__box-text--right text-normal" data-aos="fade-up"
+                    data-aos-duration="800">
                     Drugi i trzeci dzień będzie zorganizowany w formule online.
                     Linki do spotań znajdziesz w poszczególnych zakładkach.
                 </div>
@@ -95,12 +107,13 @@
 
         <section class="section">
             <div class="download">
-                <div class="download__left">
+                <div class="download__left" data-aos="fade-right" data-aos-duration="800">
                     <img src="/dist/img/download_icon.png" alt="Ikona pobierania">
                     <p class="text-big-bold text-green">Dodatkowe materiały <br> do pobrania</p>
                 </div>
-                <div class="download__line"></div>
-                <div class="download__right text-normal text-underline">
+                <div class="download__line" data-aos="fade-up" data-aos-duration="800"></div>
+                <div class="download__right text-normal text-underline" data-aos="fade-left" data-aos-duration="800"
+                    data-aos-delay="200">
                     <a href="#">Wartości Banku BNP Paribas </a>
                     <a href="#">SŁUCHAMY – materiał o badaniach </a>
                     <a href="#">ROZUMIEMY – informacje o CEX </a>
@@ -112,9 +125,7 @@
     </main>
     <!-- @include 'footer.kit' -->
 
-    <script src="./node_modules/swup/dist/swup.min.js"></script>
-    <script src="./dist/js/main.min.js"></script>
-
+    <!-- @include 'scripts.kit' -->
 </body>
 
 </html>

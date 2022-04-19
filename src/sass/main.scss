@@ -1,4 +1,31 @@
+////// VARIABLES /////
 $green: rgb(0, 151, 95);
+
+////// MIXINS //////
+@mixin close-btn {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	width: 25px;
+	padding: 20px;
+	// background-color: grey;
+
+	&::before,
+	&::after {
+		position: absolute;
+		content: '';
+		width: 25px;
+		height: 5px;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%) rotate(45deg);
+		background-color: $green;
+	}
+
+	&::after {
+		transform: translate(-50%, -50%) rotate(-45deg);
+	}
+}
 
 *,
 ::before,
@@ -50,26 +77,22 @@ html {
 body {
 	max-width: 1920px;
 	margin: 0 auto;
+	background-color: white;
 	font-family: var(--regular-font);
 	font-size: 1.4rem;
-	background-color: white;
 }
 
+/// SWUP ANIMATIONS ////////
 .transition-fade {
 	opacity: 1;
-	transition: opacity .3s;
+	transition: opacity 0.3s;
 }
 
 html.is-animating .transition-fade {
 	opacity: 0;
 }
 
-section {
-	margin: 0 auto;
-	width: 100%;
-	max-width: 1250px;
-}
-
+//// BASIC STYLES///////////
 .text-normal {
 	font-size: 1.6rem;
 }
@@ -95,12 +118,14 @@ section {
 	text-decoration: underline;
 }
 
+//// NAVIGATION ///////
 .nav {
 	position: sticky;
 	top: 0;
 	width: 100%;
 	height: 90px;
 	background-color: rgba(255, 255, 255, 0.9);
+	z-index: 1;
 
 	&__logo,
 	&__desktop {
@@ -144,6 +169,31 @@ section {
 
 	//mobile navigation
 
+	&__mobile {
+		position: fixed;
+		top: 0;
+		left: 0;
+		transform: translateX(100%);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 100vh;
+		width: 100%;
+		background-color: $green;
+		z-index: 10;
+		transition: transform 0.3s;
+
+		ul {
+			list-style: none;
+			width: 100%;
+			text-align: center;
+
+			li:first-child {
+				border-top: 1px solid white;
+			}
+		}
+	}
+
 	&__mobile-burger,
 	&__mobile-close {
 		position: absolute;
@@ -186,31 +236,6 @@ section {
 		}
 	}
 
-	&__mobile {
-		position: fixed;
-		top: 0;
-		left: 0;
-		transform: translateX(100%);
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		height: 100vh;
-		width: 100%;
-		background-color: $green;
-		z-index: 10;
-		transition: transform 0.3s;
-
-		ul {
-			list-style: none;
-			width: 100%;
-			text-align: center;
-
-			li:first-child {
-				border-top: 1px solid white;
-			}
-		}
-	}
-
 	&__mobile-item {
 		display: block;
 		padding: 30px 0;
@@ -222,8 +247,7 @@ section {
 	}
 }
 
-// do animacji nawigacji:
-
+/// NAV ANIMATION:
 .show-nav {
 	transform: translateX(0);
 }
@@ -242,17 +266,13 @@ section {
 	}
 }
 
-.section {
-	width: 100%;
-	max-width: 960px;
+section {
 	margin: 60px auto;
+	width: 100%;
 	padding: 0 30px;
+	max-width: 960px;
+	overflow: hidden;
 	text-align: center;
-}
-
-.main-info,
-.info {
-	padding: 0 50px;
 }
 
 .main-info {
@@ -354,6 +374,11 @@ section {
 }
 
 /////////////////////// DAY ///////////////////////////
+.btn-kurwa {
+	width: 200px;
+	height: 50px;
+}
+
 .day {
 	display: grid;
 	margin: 100px 0;
@@ -362,6 +387,11 @@ section {
 	&__register-img {
 		width: 100%;
 		cursor: pointer;
+		transition: transform 0.3s;
+
+		&:hover {
+			transform: scale(1.1);
+		}
 	}
 
 	&__register {
@@ -379,7 +409,7 @@ section {
 		padding: 10px 20px;
 		margin: 20px 0;
 		border: none;
-		border-radius: 5px;
+		// border-radius: 5px;
 		background-color: $green;
 		text-transform: uppercase;
 		font-family: var(--regular-font);
@@ -408,14 +438,95 @@ section {
 			margin-top: 15px;
 			font-weight: 900;
 		}
+
+		ul {
+			margin-top: 15px;
+			margin-left: 1em;
+		}
+
+		li {
+			margin-top: 5px;
+		}
 	}
 }
 
-/////////////////////// DAY - STREAM ///////////////////////////
+//// REGISTER POPUP ///////
+.popup,
+.popup__window {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
 
+.popup {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	background-color: rgba(255, 255, 255, 1);
+	opacity: 0;
+	z-index: -100;
+	transition: opacity .6s;
+
+	&__underline {
+		width: 50px;
+		height: 2px;
+		margin-top: 10px;
+		background-color: $green;
+	}
+
+	&__window {
+		position: relative;
+		transform: translateY(50px);
+		padding: 30px 30px 10px;
+		margin: 50px 10px;
+		text-align: center;
+		background-color: #fff;
+		border: solid 2px $green;
+		box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2);
+		transition: transform 1s;
+	}
+
+	&__close-btn {
+		@include close-btn;
+		cursor: pointer;
+	}
+
+	&__title {
+		margin-bottom: 5px;
+		font-family: var(--bold-font);
+		color: $green;
+	}
+
+	&__text {
+		margin-bottom: 30px;
+		font-size: 1.4rem;
+	}
+
+	&__input {
+		height: 40px;
+		width: 90%;
+		min-width: 240px;
+		padding: 5px 10px;
+	}
+}
+
+.opacity {
+	z-index: 100;
+	opacity: 1;
+}
+
+.transform {
+	transform: translateY(0);
+}
+
+/////////////////////// DAY - STREAM ///////////////////////////
 .day-content {
 	margin-top: 60px;
 	padding: 0 20px;
+	max-width: 1250px;
 	display: grid;
 	gap: 30px;
 	grid-template-columns: repeat(4, 1fr);
@@ -437,7 +548,6 @@ section {
 	}
 
 	.stream-info {
-		// position: relative;
 		display: flex;
 		flex-direction: column-reverse;
 		grid-column: 1 / 5;
@@ -445,9 +555,14 @@ section {
 
 		&__text {
 			padding-right: 20px;
+			text-align: left;
+
 			h1 {
-				// display: block;
 				margin-bottom: 10px;
+			}
+
+			p {
+				margin-bottom: 15px;
 			}
 		}
 
@@ -517,7 +632,7 @@ section {
 			margin-top: 15px;
 			justify-self: flex-end;
 			background-color: $green;
-			border-radius: 5px;
+			// border-radius: 5px;
 			font-family: var(--regular-font);
 			color: white;
 			text-transform: uppercase;
@@ -564,7 +679,6 @@ section {
 	}
 
 	.day-content {
-
 		.stream {
 			grid-column: 1 / 5;
 		}
@@ -589,6 +703,25 @@ section {
 					font-size: 1.6rem;
 				}
 			}
+		}
+	}
+
+	////// POPUP REGISTER ////
+	.popup {
+		&__window {
+			padding: 30px 30px;
+			margin: 50px 10px;
+		}
+
+		&__text {
+			margin-bottom: 40px;
+		}
+		
+		&__input {
+			height: 40px;
+			width: 90%;
+			min-width: 400px;
+			padding: 5px 10px;
 		}
 	}
 }
@@ -675,7 +808,6 @@ section {
 	}
 
 	.day-content {
-
 		.stream {
 			grid-column: 1 / 4;
 		}
